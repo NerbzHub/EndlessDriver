@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Billboard.cs" />
+    <None Include="Assets\Shaders\SurfaceWBackfaceOn.shader" />
     <Reference Include="Unity.PackageManagerUI.Editor">
       <HintPath>D:/Repos/EndlessDriver/EndlessDriver/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
