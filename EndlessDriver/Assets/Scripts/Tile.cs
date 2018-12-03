@@ -11,19 +11,27 @@ public class Tile : MonoBehaviour
     {
         MoveTile();
     }
+    private void Update()
+    {
+        if(gameObject.transform.position.z <= -200)
+        {
+            gameObject.transform.position = TileManager.SpawnPosition.transform.position;
+        }
+    }
 
     private void MoveTile()
     {
-        gameObject.GetComponent<Rigidbody>().MovePosition(gameObject.transform.position -= v3MoveAmount);
+        gameObject.transform.position -= v3MoveAmount;
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "EndCollider")
-        {
-            Debug.Log("hit");
-            TileManager.CreateTile();
-            Destroy(gameObject);
-        }
-    }
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.tag == "EndCollider")
+    //    {
+            
+            
+    //    }
+    //}
+
+    
 }
