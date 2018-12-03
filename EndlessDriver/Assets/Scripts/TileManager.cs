@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class TileManager : MonoBehaviour
 {
-    
-
     // Empty gameobjects for positions of the ones in the scene.
     public GameObject goSpawnTile = null;
 
