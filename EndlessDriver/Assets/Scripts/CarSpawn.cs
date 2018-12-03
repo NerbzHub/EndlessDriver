@@ -11,8 +11,6 @@ public class CarSpawn : MonoBehaviour
 
     public GameObject m_CarPrefab = null;
 
-    public Material m_RandMat = null;
-
     // Use this for initialization
     void OnEnable()
     {
@@ -22,32 +20,21 @@ public class CarSpawn : MonoBehaviour
         FirstObCar = Instantiate(m_CarPrefab, m_FirstSpawnPositions[rand].gameObject.transform);
         FirstObCar.transform.localPosition = new Vector3(0, 0, 0);
         FirstObCar.transform.localRotation = Quaternion.identity;
-
-
         FirstObCar.transform.GetChild(6).gameObject.GetComponent<MeshRenderer>().materials[1].color = RandomiseColour();
 
         rand = Random.Range(0, 3);
         GameObject SecondObCar = new GameObject();
-        SecondObCar = Instantiate(m_CarPrefab, m_SecondSpawnPositions[rand].gameObject.transform.position,
-            m_SecondSpawnPositions[rand].gameObject.transform.rotation);
+        SecondObCar = Instantiate(m_CarPrefab, m_SecondSpawnPositions[rand].gameObject.transform);
+        SecondObCar.transform.localPosition = new Vector3(0, 0, 0);
+        SecondObCar.transform.localRotation = Quaternion.identity;
         SecondObCar.transform.GetChild(6).gameObject.GetComponent<MeshRenderer>().materials[1].color = RandomiseColour();
-
-
 
         rand = Random.Range(0, 3);
         GameObject ThirdObCar = new GameObject();
-        ThirdObCar = Instantiate(m_CarPrefab, m_ThirdSpawnPositions[rand].gameObject.transform.position,
-            m_ThirdSpawnPositions[rand].gameObject.transform.rotation);
+        ThirdObCar = Instantiate(m_CarPrefab, m_ThirdSpawnPositions[rand].gameObject.transform);
+        ThirdObCar.transform.localPosition = new Vector3(0, 0, 0);
+        ThirdObCar.transform.localRotation = Quaternion.identity;
         ThirdObCar.transform.GetChild(6).gameObject.GetComponent<MeshRenderer>().materials[1].color = RandomiseColour();
-
-
-
-        // choose a random one from each array
-        // Instantiate a car at the selected position
-        // Set the car's colour to be a random rgb value
-
-
-
     }
 
     private Color RandomiseColour()
