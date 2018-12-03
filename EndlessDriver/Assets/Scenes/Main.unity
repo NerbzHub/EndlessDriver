@@ -16062,7 +16062,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6090b4a4145f9c5408475a56c6e6b7f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  v3MoveAmount: {x: 0, y: 0, z: 1}
+  v3MoveAmount: {x: 0, y: 0, z: 0}
 --- !u!65 &1452790952
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16163,6 +16163,7 @@ MonoBehaviour:
   - {fileID: 185260821}
   m_CarPrefab: {fileID: 1717008641912158, guid: bdee45c658baa61409df5e182e1067fa,
     type: 2}
+  m_RandMat: {fileID: 0}
 --- !u!1 &1457553092
 GameObject:
   m_ObjectHideFlags: 0

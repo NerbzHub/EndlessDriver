@@ -19,8 +19,10 @@ public class CarSpawn : MonoBehaviour
         // assign 1 car to each section.
         int rand = Random.Range(0, 3);
         GameObject FirstObCar = new GameObject();
-        FirstObCar = Instantiate(m_CarPrefab, m_FirstSpawnPositions[rand].gameObject.transform.position, 
-            m_FirstSpawnPositions[rand].gameObject.transform.rotation);
+        FirstObCar = Instantiate(m_CarPrefab, m_FirstSpawnPositions[rand].gameObject.transform);
+        FirstObCar.transform.localPosition = new Vector3(0, 0, 0);
+        FirstObCar.transform.localRotation = Quaternion.identity;
+
 
         FirstObCar.transform.GetChild(6).gameObject.GetComponent<MeshRenderer>().materials[1].color = RandomiseColour();
 
@@ -50,17 +52,12 @@ public class CarSpawn : MonoBehaviour
 
     private Color RandomiseColour()
     {
-        Color[] colorArray = new Color[7];
-        colorArray[0] = Color.black;
-        colorArray[1] = Color.blue;
-        colorArray[2] = Color.cyan;
-        colorArray[3] = Color.grey;
-        colorArray[4] = Color.green;
-        colorArray[5] = Color.red;
-        colorArray[6] = Color.yellow;
+        Color randCol = new Color();
+        randCol.r = Random.Range(0.0f, 1.0f);
+        randCol.g = Random.Range(0.0f, 1.0f);
+        randCol.b = Random.Range(0.0f, 1.0f);
+        randCol.a = 1.0f;
 
-        int rand = Random.Range(0, colorArray.Length);
-        Color randCol = colorArray[rand];
         return randCol;
     }
 }

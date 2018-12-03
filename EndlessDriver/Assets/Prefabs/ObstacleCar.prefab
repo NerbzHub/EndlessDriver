@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 33514738770897308}
   - component: {fileID: 23918219099268554}
   m_Layer: 0
-  m_Name: pasted__pasted__pCylinder1
+  m_Name: MainMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
