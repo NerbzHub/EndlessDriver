@@ -28,6 +28,8 @@ public class Movement : MonoBehaviour
             m_currentPos--;
         }
 
+        InputCheck();
+
         // allocate the position to the currentpos array index of currentpos
         //if (m_previousPos != m_currentPos)
         //{
@@ -45,17 +47,28 @@ public class Movement : MonoBehaviour
         {
             if (Input.touches[0].position.x > (Camera.main.pixelWidth / 2))
             {
-
+                MoveRight();
+            }
+            else if(Input.touches[0].position.x < (Camera.main.pixelWidth / 2))
+            {
+                MoveLeft();
             }
         }
     }
 
     private void MoveRight()
     {
-
+        if(m_currentPos < 3)
+        {
+            m_currentPos++;
+        }
     }
+
     private void MoveLeft()
     {
-
+        if(m_currentPos > 0)
+        {
+            m_currentPos--;
+        }
     }
 }
