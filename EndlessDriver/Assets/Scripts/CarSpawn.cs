@@ -15,7 +15,7 @@ public class CarSpawn : MonoBehaviour
     void OnEnable()
     {
         // assign 1 car to each section.
-        int rand = Random.Range(0, 3);
+        int rand = Random.Range(0, 4);
         GameObject FirstObCar = new GameObject();
         FirstObCar = Instantiate(m_CarPrefab, m_FirstSpawnPositions[rand].gameObject.transform);
         FirstObCar.transform.localPosition = new Vector3(0, 0, 0);
