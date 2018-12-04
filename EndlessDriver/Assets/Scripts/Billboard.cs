@@ -26,6 +26,10 @@ public class Billboard : MonoBehaviour
     /// <param name="Go">Intended to be this.gameObject.</param>
     private void BillboardObject(GameObject Go)
     {
-        Go.transform.LookAt(-Camera.main.transform.position, Vector3.up);
+        if (Go.transform.position.z > 0)
+        {
+            Go.transform.LookAt(Camera.main.transform.position, Vector3.up);
+            Go.transform.eulerAngles = new Vector3(Go.transform.eulerAngles.x, Go.transform.eulerAngles.y + 180, Go.transform.eulerAngles.z);
+        }
     }
 }
