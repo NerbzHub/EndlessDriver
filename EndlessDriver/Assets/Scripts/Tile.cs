@@ -5,7 +5,7 @@ using UnityEngine;
 public class Tile : MonoBehaviour
 {
     public Vector3 v3MoveAmount = Vector3.zero;
-
+   
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -17,6 +17,8 @@ public class Tile : MonoBehaviour
         {
             gameObject.transform.position = TileManager.SpawnPosition.transform.position;
         }
+
+         v3MoveAmount.z += (TileManager.s_SpeedUpMulti * 0.01f); 
     }
 
     private void MoveTile()
