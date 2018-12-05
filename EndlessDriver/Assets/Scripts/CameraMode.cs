@@ -27,7 +27,7 @@ public class CameraMode : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.V))
+        if (Input.GetKeyDown(KeyCode.V) || Input.touches.Length >= 3)
         {
             if (camMode == ENUMCAMERAMODE.FIRSTPERSON)
                 camMode = ENUMCAMERAMODE.THIRDPERSON;
