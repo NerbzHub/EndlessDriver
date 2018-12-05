@@ -18,6 +18,7 @@ public class Tile : MonoBehaviour
             gameObject.transform.position = TileManager.SpawnPosition.transform.position;
         }
 
+        if(v3MoveAmount.z <= 4.0f)
          v3MoveAmount.z += (TileManager.s_SpeedUpMulti * 0.01f); 
     }
 
