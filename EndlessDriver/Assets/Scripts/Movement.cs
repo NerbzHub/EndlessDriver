@@ -9,12 +9,6 @@ public class Movement : MonoBehaviour
     private int m_currentPos = 0;
     private int m_previousPos;
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {

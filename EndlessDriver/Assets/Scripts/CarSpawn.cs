@@ -14,27 +14,38 @@ public class CarSpawn : MonoBehaviour
     // Use this for initialization
     void OnEnable()
     {
+        DeleteOldCars();
+        SpawnCars();
+    }
+
+    private void SpawnCars()
+    {
         // assign 1 car to each section.
         int rand = Random.Range(0, 4);
-        GameObject FirstObCar = new GameObject();
-        FirstObCar = Instantiate(m_CarPrefab, m_FirstSpawnPositions[rand].gameObject.transform);
+        GameObject FirstObCar = Instantiate(m_CarPrefab, m_FirstSpawnPositions[rand].gameObject.transform);
         FirstObCar.transform.localPosition = new Vector3(0, 0, 0);
         FirstObCar.transform.localRotation = Quaternion.identity;
         FirstObCar.transform.GetChild(6).gameObject.GetComponent<MeshRenderer>().materials[1].color = RandomiseColour();
 
         rand = Random.Range(0, 3);
-        GameObject SecondObCar = new GameObject();
-        SecondObCar = Instantiate(m_CarPrefab, m_SecondSpawnPositions[rand].gameObject.transform);
+        GameObject SecondObCar = Instantiate(m_CarPrefab, m_SecondSpawnPositions[rand].gameObject.transform);
         SecondObCar.transform.localPosition = new Vector3(0, 0, 0);
         SecondObCar.transform.localRotation = Quaternion.identity;
         SecondObCar.transform.GetChild(6).gameObject.GetComponent<MeshRenderer>().materials[1].color = RandomiseColour();
 
         rand = Random.Range(0, 3);
-        GameObject ThirdObCar = new GameObject();
-        ThirdObCar = Instantiate(m_CarPrefab, m_ThirdSpawnPositions[rand].gameObject.transform);
+        GameObject ThirdObCar = Instantiate(m_CarPrefab, m_ThirdSpawnPositions[rand].gameObject.transform);
         ThirdObCar.transform.localPosition = new Vector3(0, 0, 0);
         ThirdObCar.transform.localRotation = Quaternion.identity;
         ThirdObCar.transform.GetChild(6).gameObject.GetComponent<MeshRenderer>().materials[1].color = RandomiseColour();
+    }
+
+    private void DeleteOldCars()
+    {
+        foreach(Rigidbody rb in gameObject.transform.GetComponentsInChildren<Rigidbody>())
+        {
+            Destroy(rb.gameObject);
+        }
     }
 
     private Color RandomiseColour()
